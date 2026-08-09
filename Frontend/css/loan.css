@@ -1,0 +1,215 @@
+/* ===== LOAN SECTION STYLES ===== */
+#loan .form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+#loan .form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+#loan button {
+  margin-top: 15px;
+  min-height: 44px;
+}
+
+.loan-filters {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loan-search {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-height: 44px;
+}
+
+.loan-filter-date {
+  padding: 10px;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+#loanBankGroup,
+#loanUPIGroup {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#loanBankGroup.show,
+#loanUPIGroup.show {
+  display: flex;
+}
+
+#loanBankGroup label,
+#loanUPIGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+#loanBankGroup select,
+#loanUPIGroup select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.loan-additional-details {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f0f8ff;
+  border-radius: 6px;
+}
+
+.loan-additional-details h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.loan-additional-details input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+/* Responsive tablet styling */
+@media (max-width: 768px) {
+  #loan .form-row {
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  #loan .form-group {
+    min-width: 150px;
+  }
+
+  .loan-filters {
+    gap: 8px;
+    margin: 15px 0;
+  }
+
+  .loan-search {
+    min-width: 120px;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .loan-filter-date {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .loan-additional-details {
+    margin-top: 15px;
+    padding: 12px;
+  }
+
+  .loan-additional-details h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .loan-additional-details input {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* Responsive mobile styling */
+@media (max-width: 480px) {
+  #loan .form-row {
+    gap: 0;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  #loan .form-group {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  #loan button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+  }
+
+  .loan-filters {
+    gap: 8px;
+    margin: 15px 0;
+    flex-direction: column;
+  }
+
+  .loan-search {
+    min-width: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .loan-filter-date {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #loanBankGroup,
+  #loanUPIGroup {
+    gap: 8px;
+  }
+
+  #loanBankGroup label,
+  #loanUPIGroup label {
+    font-size: 13px;
+  }
+
+  #loanBankGroup select,
+  #loanUPIGroup select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .loan-additional-details {
+    margin-top: 15px;
+    padding: 12px;
+  }
+
+  .loan-additional-details h4 {
+    font-size: 13px;
+  }
+
+  .loan-additional-details input {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}

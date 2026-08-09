@@ -1,0 +1,741 @@
+/* ===== RESPONSIVE DESIGN - MOBILE-FIRST APPROACH ===== */
+
+/* DEFAULT: DESKTOP (1200px and above) - Full Web Layout */
+/* .app sidebar stays vertical (200-220px width) - default styling from main.css */
+
+/* ===== EXTRA LARGE SCREENS (1440px and up) ===== */
+@media (min-width: 1440px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 240px;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .main {
+    flex: 1;
+    min-height: 100vh;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  .form-row {
+    gap: 20px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
+/* ===== LARGE SCREENS (1200px to 1439px) ===== */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 220px;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .main {
+    flex: 1;
+    min-height: 100vh;
+    padding: 20px 25px;
+    overflow-y: auto;
+  }
+
+  .form-row {
+    gap: 18px;
+  }
+
+  .cards {
+    gap: 18px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+}
+
+/* ===== MEDIUM SCREENS (1025px to 1199px) ===== */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .main {
+    flex: 1;
+    min-height: 100vh;
+    padding: 18px 20px;
+    overflow-y: auto;
+  }
+
+  .form-row {
+    gap: 15px;
+  }
+
+  .cards {
+    gap: 15px;
+  }
+
+  .card {
+    min-width: 180px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 9px 7px;
+  }
+}
+
+
+/* ===== TABLET SCREENS (769px to 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 12px 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    overflow-x: auto;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+
+  .sidebar h3 {
+    margin: 0 15px 0 0;
+    font-size: 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sidebar button {
+    margin: 5px 5px 5px 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: auto;
+    min-width: auto;
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .form-row {
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .cards {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    min-width: 200px;
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  table {
+    font-size: 12px;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  th,
+  td {
+    padding: 8px 6px;
+  }
+
+  .primary-btn {
+    padding: 10px 18px;
+    font-size: 12px;
+    width: auto;
+  }
+
+  .master-tab-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .auth-card {
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .auth-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .auth-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .master-tab-content {
+    padding: 12px 0;
+  }
+}
+
+/* ===== SMALL TABLETS & LARGE PHONES (481px to 768px) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-color);
+    gap: 6px;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+
+  .sidebar h3 {
+    width: 100%;
+    margin: 0 0 8px 0;
+    font-size: 15px;
+  }
+
+  .sidebar button {
+    flex: 1 1 calc(33.33% - 6px);
+    min-width: 90px;
+    margin: 3px;
+    padding: 9px 8px;
+    font-size: 11px;
+    height: 44px;
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    min-height: auto;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    flex: 1;
+    margin-bottom: 5px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    min-height: 80px;
+    padding: 12px;
+    font-size: 13px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  table {
+    font-size: 11px;
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  th,
+  td {
+    padding: 7px 5px;
+    font-size: 11px;
+  }
+
+  .primary-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    width: auto;
+  }
+
+  .master-tab-btn {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .section h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .auth-card {
+    padding: 22px;
+    max-width: 95%;
+    width: 100%;
+  }
+
+  .auth-card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .auth-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  input,
+  select {
+    padding: 9px;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  select[multiple] {
+    min-height: 100px;
+  }
+}
+
+
+/* ===== MOBILE PHONES (320px to 480px) ===== */
+@media (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 8px 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary);
+    gap: 4px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .sidebar h3 {
+    width: 100%;
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-size: 13px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sidebar button {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 70px;
+    max-width: calc(50% - 2px);
+    margin: 2px 2px;
+    padding: 8px 5px;
+    font-size: 10px;
+    height: 40px;
+    border-radius: 3px;
+  }
+
+  .sidebar button:last-child {
+    flex: 1 1 100%;
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    min-height: auto;
+    flex: 1;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .form-group {
+    flex: 1;
+    margin-bottom: 4px;
+    width: 100%;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    display: block;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 8px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    min-height: 44px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.1);
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .card {
+    min-height: 70px;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  table {
+    font-size: 10px;
+    margin-top: 8px;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  thead {
+    display: block;
+    width: 100%;
+    background: #f3f4f6;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: block;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
+  thead tr {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  th {
+    display: block;
+    padding: 6px 4px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  td {
+    display: block;
+    padding: 6px 4px;
+    text-align: left;
+  }
+
+  .primary-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    min-height: 44px;
+    cursor: pointer;
+  }
+
+  .primary-btn:active {
+    transform: scale(0.98);
+  }
+
+  .master-tab-btn {
+    padding: 8px 8px;
+    font-size: 10px;
+    flex: 1;
+    margin: 3px 2px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .master-tab-content {
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .master-tabs {
+    gap: 4px;
+    margin-bottom: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .section {
+    padding: 0;
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+  }
+
+  .section h3 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .auth-overlay {
+    padding: 5px;
+    width: 100%;
+  }
+
+  .auth-card {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .auth-card form {
+    gap: 12px;
+  }
+
+  .auth-card h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+  }
+
+  .auth-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  select[multiple] {
+    min-height: 100px;
+  }
+
+  /* Touch-friendly elements */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent double tap zoom on inputs */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .loader {
+    width: 30px;
+    height: 30px;
+  }
+
+  .notification {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ===== EXTRA SMALL PHONES (below 320px) ===== */
+@media (max-width: 319px) {
+  .sidebar button {
+    min-width: 60px;
+    font-size: 9px;
+    padding: 6px 4px;
+  }
+
+  .form-group label {
+    font-size: 10px;
+  }
+
+  table {
+    font-size: 9px;
+  }
+
+  th,
+  td {
+    padding: 4px 2px;
+  }
+
+  .primary-btn {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .auth-card {
+    padding: 10px;
+  }
+
+  .auth-card h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .section h2 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
