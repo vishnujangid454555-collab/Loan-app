@@ -1,7 +1,13 @@
 // ================= API CLIENT =================
 // Communicates with the Express backend (replaces direct Firestore access)
 
-const API_BASE_URL = window.LOAN_APP_API_URL || "http://localhost:3000/api";
+const API_BASE_URL = window.LOAN_APP_API_URL || (
+  window.location.protocol === "file:" ||
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000/api"
+    : "https://loan-app-backend-api.onrender.com/api"
+);
 
 async function getAuthToken() {
   if (!currentUser) return null;
