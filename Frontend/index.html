@@ -89,7 +89,7 @@
         </div>
       </div>
       <button onclick="showSection('dashboard')">Dashboard</button>
-      <button onclick="showSection('master')">Master</button>
+      <button onclick="showSection('master', { tab: 'customers' })">Master</button>
       <button onclick="showSection('loan')">Loans</button>
       <button onclick="showSection('payment')">Payments</button>
       <button onclick="showSection('ledger')">Ledger</button>
@@ -151,11 +151,11 @@
 
         <!-- MASTER TABS -->
         <div class="master-tabs">
-          <button class="master-tab-btn active" onclick="showMasterTab('customers')">Customers</button>
-          <button class="master-tab-btn" onclick="showMasterTab('vendors')">Transactors</button>
-          <button class="master-tab-btn" onclick="showMasterTab('banks')">Banks</button>
-          <button class="master-tab-btn" onclick="showMasterTab('upi')">UPI ID</button>
-          <button class="master-tab-btn" onclick="showMasterTab('additionalDetails')">Additional Details</button>
+          <button class="master-tab-btn active" data-tab="customers" onclick="showMasterTab('customers')">Customers</button>
+          <button class="master-tab-btn" data-tab="vendors" onclick="showMasterTab('vendors')">Transactors</button>
+          <button class="master-tab-btn" data-tab="banks" onclick="showMasterTab('banks')">Banks</button>
+          <button class="master-tab-btn" data-tab="upi" onclick="showMasterTab('upi')">UPI ID</button>
+          <button class="master-tab-btn" data-tab="additionalDetails" onclick="showMasterTab('additionalDetails')">Additional Details</button>
         </div>
 
         <!-- CUSTOMERS TAB -->
@@ -830,7 +830,34 @@
       <!-- REPORTS -->
       <div id="reports" class="section hidden">
         <h2>Reports</h2>
-        <p>Coming Next...</p>
+
+        <div class="report-section">
+          <h3>Choose a report</h3>
+          <div id="reportNav" class="report-nav"></div>
+        </div>
+
+        <div id="reportControls" class="report-section report-controls hidden">
+          <div id="reportFilterGroup" class="report-filter-group"></div>
+
+          <div id="reportSummary" class="report-stats"></div>
+
+          <div class="report-actions">
+            <button class="primary-btn report-action-btn" onclick="printCurrentReport()">Print</button>
+            <button class="primary-btn report-action-btn" onclick="exportCurrentReport('pdf')">Export PDF</button>
+            <button class="primary-btn report-action-btn" onclick="exportCurrentReport('xlsx')">Export Excel</button>
+            <button class="primary-btn report-action-btn" onclick="exportCurrentReport('csv')">Export CSV</button>
+          </div>
+        </div>
+
+        <div class="report-section">
+          <div class="report-table">
+            <table>
+              <thead id="reportTableHead"></thead>
+              <tbody id="reportTableBody"></tbody>
+            </table>
+          </div>
+          <div id="reportEmpty" class="report-empty" style="display: none;"></div>
+        </div>
       </div>
 
       <!-- SUPER ADMIN -->

@@ -7,12 +7,20 @@ let editingUPIId = null;
 let editingAdditionalDetailId = null;
 
 // ================= MASTER TAB SWITCH =================
-function showMasterTab(tabName) {
+function showMasterTab(tabName, options = {}) {
+  const safeTab = ["customers", "vendors", "banks", "upi", "additionalDetails"].includes(tabName) ? tabName : "customers";
+
   document.querySelectorAll(".master-tab-content").forEach(tab => tab.classList.add("hidden"));
-  document.getElementById("master-" + tabName).classList.remove("hidden");
+  const targetTab = document.getElementById("master-" + safeTab);
+  if (targetTab) targetTab.classList.remove("hidden");
 
   document.querySelectorAll(".master-tab-btn").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+  const targetButton = document.querySelector(`.master-tab-btn[data-tab="${safeTab}"]`);
+  if (targetButton) targetButton.classList.add("active");
+
+  if (!options.skipRouteUpdate) {
+    showSection("master", { tab: safeTab });
+  }
 }
 
 // ================= HELPER: GET CURRENT CUSTOMER INPUTS =================
