@@ -9,18 +9,41 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const serviceAccount = JSON.parse(
-  fs.readFileSync(
-    path.join(__dirname, "../../serviceAccountKey.json"),
-    "utf8"
-  )
-);
-
+const localServiceAccountPath = path.join(__dirname, "../../serviceAccountKey.json");
 let initialized = false;
+
+function getServiceAccount() {
+  const envCredentials = process.env.FIREBASE_SERVICE_ACCOUNT;
+
+  if (envCredentials && envCredentials.trim()) {
+    try {
+      return JSON.parse(envCredentials);
+    } catch (error) {
+      throw new Error(
+        "FIREBASE_SERVICE_ACCOUNT is not valid JSON. Please provide valid Firebase service account credentials."
+      );
+    }
+  }
+
+  if (fs.existsSync(localServiceAccountPath)) {
+    const fileContents = fs.readFileSync(localServiceAccountPath, "utf8");
+    return JSON.parse(fileContents);
+  }
+
+  return null;
+}
 
 export function initializeFirebaseAdmin() {
   if (initialized) {
     return admin;
+  }
+
+  const serviceAccount = getServiceAccount();
+
+  if (!serviceAccount) {
+    throw new Error(
+      "Firebase credentials not found. Set FIREBASE_SERVICE_ACCOUNT or add the local serviceAccountKey.json file for development."
+    );
   }
 
   admin.initializeApp({
